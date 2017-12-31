@@ -1,0 +1,8 @@
+app:
+    resource: "@my_projectGestionLivresBundle/Controller"
+    type:     annotation
+
+homepage:
+    path: /
+    defaults:
+        _controller: my_projectGestionLivresBundle:Main:homepage

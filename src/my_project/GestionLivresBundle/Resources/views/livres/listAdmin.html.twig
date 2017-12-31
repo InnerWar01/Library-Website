@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            <tr>
+                <td>
+                    <a class="isbn" href="{{ path('admin_book_edit', {'isbn': book.isbn}) }}">{{ book.isbn }}</a>
+                    <a href="{{ path('admin_book_delete', {'isbn': book.isbn}) }}">
+                        <img class="supprimer" src="{{ asset('images/delete.png') }}">
+                    </a>
+                </td>
+                <td>{{ book.title }}</td>
+                <td>{{ book.price }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

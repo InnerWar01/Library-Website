@@ -1,0 +1,7 @@
+{{ form_start(bookForm) }}
+    {{ form_row(bookForm.isbn) }}
+    {{ form_row(bookForm.title) }}
+    {{ form_row(bookForm.price) }}
+
+    <button type="submit" class="btn btn-primary" formnovalidate>Valider</button>
+{{ form_end(bookForm) }}

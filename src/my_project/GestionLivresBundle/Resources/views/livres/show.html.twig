@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livres{% endblock %}
+
+{% block body %}
+    <h2 class="book-title">{{ book.title }}</h2>
+    <p>{{ book.isbn }}</p>
+    <p>{{ book.price }}</p>
+{% endblock %}

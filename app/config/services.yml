@@ -1,0 +1,25 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    app.markdown_transformer:
+        class: my_project\GestionLivresBundle\Services\MarkdownTransformer
+        arguments: ['@markdown.parser']
+
+    app.markdown_extension:
+        class: my_project\GestionLivresBundle\Twig\MarkdownExtension
+        tags:
+            - { name: twig.extension }
+        arguments: ['@app.markdown_transformer']
+
+    app.security.login_form_authenticator:
+        class: my_project\GestionLivresBundle\Security\LoginFormAuthenticator
+        autowire: true
+
+    app.doctrine.hash_password_listener:
+        class: my_project\GestionLivresBundle\Doctrine\HashPasswordListener
+        autowire: true
+        tags:
+            - { name: doctrine.event_subscriber }

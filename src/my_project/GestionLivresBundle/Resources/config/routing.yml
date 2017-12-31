@@ -1,0 +1,3 @@
+my_project_gestion_livres_homepage:
+    path:     /book
+    defaults: { _controller: my_projectGestionLivresBundle:Livres:getLivres }
